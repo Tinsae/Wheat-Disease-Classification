@@ -1,0 +1,23 @@
+
+
+#mygridpane
+{
+	-fx-font-size:14px;
+	-fx-fill-width:true; 
+	-fx-grid-lines-visible:false; 
+	-fx-hgap:5px;
+	-fx-vgap:5px;
+	-fx-padding:15px;
+	-fx-background-color:beige; 
+}
+#box
+{
+		-fx-font-size:12px;
+	
+}
+#sendfacts
+{
+			-fx-font-size:14px;
+	
+}
+

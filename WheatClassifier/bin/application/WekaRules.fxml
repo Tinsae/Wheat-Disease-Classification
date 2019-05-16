@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="875.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.WekaRulesController">
+   <children>
+     <fx:include fx:id="begin" source="Main.fxml" />
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Accordion>
+              <panes>
+                  <TitledPane id="bottompane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="207.0" prefWidth="391.0" snapToPixel="false" style="-fx-alignment: center;" styleClass="anchorpanerules" text="List of Rules [JRIP / APRIORI]">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                     <content>
+                        <ListView fx:id="lvRules" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="149.0" prefWidth="405.0" styleClass="listofrules" stylesheets="@wekarules.css" />
+                     </content>
+                     <graphic>
+                        <Button fx:id="btnSend" mnemonicParsing="false" onAction="#sendRules" style="-fx-font-size: 14;" text="Send to JESS" />
+                     </graphic>
+                  </TitledPane>
+                  <TitledPane animated="false" prefHeight="211.0" prefWidth="350.0" text="Add in Bulk">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="77.0" prefWidth="348.0">
+                           <children>
+                              <TextField fx:id="bulkURL" layoutX="2.0" layoutY="2.0" prefHeight="38.0" prefWidth="255.0">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </TextField>
+                              <Button fx:id="browseBulk" layoutX="261.0" layoutY="2.0" mnemonicParsing="false" onAction="#browseClick" text="..." />
+                              <Button fx:id="btnExecute2" layoutX="118.0" layoutY="40.0" mnemonicParsing="false" onAction="#executeBulkRules" style="-fx-font-size: 14;" text="Execute" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TitledPane>
+                  <TitledPane animated="false" prefHeight="211.0" prefWidth="443.0" text="Add Single Rule">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="126.0" prefWidth="348.0">
+                           <children>
+                              <TextArea fx:id="txtNewRule" layoutX="1.0" layoutY="2.0" prefHeight="178.0" prefWidth="343.0" promptText="(defrule myrule  (Variety Kubsa) =&gt; (assert (DiseaseType StemRust )))">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </TextArea>
+                              <Button fx:id="btnExecute1" layoutX="139.0" layoutY="150.0" mnemonicParsing="false" onAction="#executeSingleRule" style="-fx-font-size: 14;" text="Execute" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+              </panes>
+            </Accordion>
+            <TitledPane layoutX="443.0" prefHeight="267.0" prefWidth="408.0" text="RETE Engine" textFill="#da0707">
+               <content>
+                  <ScrollPane prefHeight="267.0" prefWidth="342.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="396.0">
+                           <children>
+                              <TextArea fx:id="txtRConsole" prefHeight="255.0" prefWidth="416.0" promptText="Console Output">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextArea>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+               </content>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TitledPane>
+         </children>
+      </AnchorPane>
+      <VBox fx:id="vboxBottom" prefHeight="83.0" prefWidth="875.0">
+         <children>
+            <HBox prefHeight="122.0" prefWidth="366.0">
+               <children>
+                  <Text fx:id="txtStat1" fill="#e80000" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font name="Century Gothic" size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="txtStat2" fill="#2c00ff" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text fx:id="txtStat3" fill="#e80000" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text fx:id="txtStat4" fill="#2c00ff" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font name="Century Gothic" size="19.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>

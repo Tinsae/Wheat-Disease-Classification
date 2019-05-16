@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="875.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ResultsController">
+   <children>
+     <fx:include fx:id="begin" source="Main.fxml" />
+      <HBox fillHeight="false" prefHeight="242.0" prefWidth="875.0">
+         <children>
+            <VBox fx:id="factsEntry" prefHeight="316.0" prefWidth="472.0">
+               <children>
+                  <TabPane fx:id="tpResults" prefHeight="332.0" prefWidth="472.0" style="-fx-font-size: 12px;" tabClosingPolicy="UNAVAILABLE" />
+               </children>
+            </VBox>
+            <TitledPane prefHeight="265.0" prefWidth="309.0" text="RETE Engine" textFill="#da0707">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="157.0" prefWidth="349.0">
+                     <children>
+                        <ScrollPane prefHeight="241.0" prefWidth="309.0">
+                           <content>
+                              <TextArea fx:id="txtRConsole" prefHeight="247.0" prefWidth="766.0" promptText="Console Output">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextArea>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+         </children>
+      </HBox>
+   </children>
+   <stylesheets>
+      <URL value="@application.css" />
+      <URL value="@result.css" />
+   </stylesheets>
+</VBox>

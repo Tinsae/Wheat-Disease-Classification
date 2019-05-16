@@ -1,0 +1,54 @@
+.label
+{
+}
+.root
+{
+	-fx-background-image:url("../wheat.jpg");
+	 
+}
+#shit1
+{
+	   -fx-background-color:yellow; 
+	
+}
+
+#shit2
+{
+		  -fx-background-color:purple; 
+	
+}
+.tooltip
+{
+	-fx-font-size:12px;
+	-fx-font-family:'Segoe UI';	
+}
+#icons
+{
+	
+}	
+
+#data, #rules, #facts, #result { 
+   -fx-min-width:200px;
+   -fx-min-height:90px;
+   -fx-background-color:transparent; 
+	-fx-background-image:url("../new10.png");
+   -fx-background-repeat:stretch ; 
+   -fx-content-display:left; 
+   -fx-wrap-text:true; 
+	-fx-font-size:16px;
+	-fx-font-family:'Tahoma';
+	-fx-opacity:0.9;
+	-fx-font-weight:bold;
+	-fx-blend-mode:hard-light;
+
+   
+}
+
+
+
+
+
+
+
+
+

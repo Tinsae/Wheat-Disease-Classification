@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="875.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DataController">
+   <children>
+     <fx:include fx:id="begin" source="Main.fxml" />
+      <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" styleClass="datacontent" stylesheets="@data.css" VBox.vgrow="ALWAYS">
+         <children>
+            <GridPane id="theform" prefHeight="172.0" prefWidth="520.0" styleClass="mygridpane">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="149.0" minWidth="10.0" prefWidth="135.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="201.0" minWidth="0.0" prefWidth="151.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="445.0" minWidth="10.0" prefWidth="215.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Select File">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Select Algorithm" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button mnemonicParsing="false" onAction="#browseClick" prefHeight="15.0" prefWidth="52.0" text="..." GridPane.columnIndex="1" />
+                  <TextField fx:id="txtURL" maxWidth="-Infinity" prefHeight="23.0" prefWidth="180.0" promptText="Click ... to Load File" GridPane.columnIndex="2" />
+                  <HBox prefHeight="35.0" prefWidth="326.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <children>
+                        <Button fx:id="btnpBrowse" mnemonicParsing="false" onAction="#btnpBrowse" prefHeight="20.0" prefWidth="60.0" text="..." />
+                        <TextField fx:id="txtpURL" promptText="Click ... to Load File" />
+                     </children>
+                  </HBox>
+                  <Button mnemonicParsing="false" onAction="#generateRules" prefHeight="42.0" prefWidth="277.0" text="Generate Rules" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Button>
+                  <Label text="Discretize" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <HBox fx:id="progDisc" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <children>
+                        <CheckBox fx:id="chkNumeric" mnemonicParsing="false" onAction="#discretizeAttributes" prefHeight="35.0" prefWidth="46.0" text="Yes">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </CheckBox>
+                        <Label fx:id="lblInterval" text="Interval">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="25.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Spinner fx:id="spDisc" prefHeight="0.0" prefWidth="74.0">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Spinner>
+                     </children>
+                  </HBox>
+                  <ComboBox fx:id="cmbAlg" prefHeight="30.0" prefWidth="180.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ProgressIndicator fx:id="progIndicator" prefHeight="35.0" prefWidth="57.0" progress="0.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </ProgressIndicator>
+               </children>
+            </GridPane>
+            <VBox fx:id="vboxBottom" layoutX="14.0" layoutY="192.0" prefHeight="60.0" prefWidth="100.0">
+               <children>
+                  <Text fx:id="txtStat1" fill="#e80000" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font name="Century Gothic" size="24.0" />
+                     </font></Text>
+                  <Text fx:id="txtStat2" fill="#2c00ff" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text fx:id="txtStat3" fill="#e80000" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text fx:id="txtStat4" fill="#2c00ff" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font name="Century Gothic" size="19.0" />
+                     </font></Text>
+               </children>
+            </VBox>
+            <TitledPane layoutX="489.0" prefHeight="267.0" prefWidth="361.0" text="RETE Engine" textFill="#da0707">
+               <content>
+                  <ScrollPane prefHeight="275.0" prefWidth="359.0">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="241.0" prefWidth="396.0">
+                           <children>
+                              <TextArea fx:id="txtRConsole" prefHeight="220.0" prefWidth="416.0" promptText="Console Output">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextArea>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </content>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TitledPane>
+         </children>
+         <VBox.margin>
+            <Insets left="25.0" />
+         </VBox.margin>
+      </AnchorPane>
+   </children>
+   <stylesheets>
+      <URL value="@application.css" />
+      <URL value="@data.css" />
+   </stylesheets>
+</VBox>

@@ -1,0 +1,24 @@
+.datacontent
+{
+	-fx-background-color:beige;
+	-fx-blend-mode:hard-light ; 
+	
+}
+.mygridpane
+{
+	-fx-hgap:10px;
+	-fx-vgap:10px;
+	-fx-alignment:top-center ;
+	-fx-grid-lines-visible:false; 
+	-fx-font-size:14px;
+	
+}
+.button
+{
+		-fx-font-size:14px;
+	
+}
+
+.label
+{
+}
